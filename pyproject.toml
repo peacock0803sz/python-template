@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+
+[project]
+name = "template"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [{name = "Peacock", email = "contact@peacock0803sz.com"}]
+urls = {repository = "https://github.com/peacock0803sz/python-template"}
+
+dynamic = ["version"]
+requires-python = ">=3.8"
+
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest"]
+dev = ["black", "flake8", "mypy"]
