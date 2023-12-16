@@ -12,7 +12,7 @@ authors = [{name = "Peacock", email = "contact@peacock0803sz.com"}]
 urls = {repository = "https://github.com/peacock0803sz/python-template"}
 
 dynamic = ["version"]
-requires-python = ">=3.8"
+requires-python = ">=3.11"
 
 dependencies = []
 
@@ -22,7 +22,7 @@ dev = ["black", "flake8", "mypy"]
 
 [tool.black]
 line-length = 88
-target-version = ["py38"]
+target-version = ["py311"]
 
 [tool.mypy]
 ignore_missing_imports = true
