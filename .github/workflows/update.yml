@@ -1,0 +1,33 @@
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 15 * * * # everyday 00:00 JST (Midnight)
+
+jobs:
+  update-devenv:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v31
+      - uses: cachix/cachix-action@v14
+        with:
+          name: devenv
+
+      - name: update-devenv
+        shell: bash
+        run: |
+          nix profile install nixpkgs#devenv
+          devenv update
+
+      - name: git-commit
+        env:
+          GIT_AUTHOR_NAME: "Peacock"
+          GIT_AUTHOR_EMAIL: "33555487+peacock0803sz@users.noreply.github.com"
+          GIT_COMMITTER_NAME: "github-actions[bot]"
+          GIT_COMMITTER_EMAIL: "github-actions[bot]@users.noreply.github.com"
+        run: |
+          git add devenv.lock
+          git commit -m "Update devenv.lock"
+          git push origin HEAD
