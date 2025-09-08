@@ -29,5 +29,5 @@ jobs:
           GIT_COMMITTER_EMAIL: "github-actions[bot]@users.noreply.github.com"
         run: |
           git add devenv.lock
-          git commit -m "Update devenv.lock"
+          git commit -m ":snowflake: Update devenv.lock"
           git push origin HEAD
