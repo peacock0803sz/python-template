@@ -1,7 +1,7 @@
 { pkgs, lib, config, inputs, ... }:
 
 {
-  cachix.enable = false;
+  dotenv.enable = true;
   # https://devenv.sh/basics/
   env = {
     PROJECT_NAME = "template";
