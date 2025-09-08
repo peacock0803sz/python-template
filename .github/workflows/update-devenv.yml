@@ -28,6 +28,7 @@ jobs:
           GIT_COMMITTER_NAME: "github-actions[bot]"
           GIT_COMMITTER_EMAIL: "github-actions[bot]@users.noreply.github.com"
         run: |
+          if (( $(git status --short --untracked-files | wc -l) < 1 )); then exit 0; fi
           git add devenv.lock
           git commit -m ":snowflake: Update devenv.lock"
           git push origin HEAD
