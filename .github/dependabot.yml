@@ -1,0 +1,12 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    schedule:
+      interval: weekly
+    directories:
+      - ".github/workflows/**"
+  - package-ecosystem: "uv"
+    schedule:
+      interval: weekly
+    directories:
+      - "**"
