@@ -1,12 +1,15 @@
 version: 2
 updates:
-  - package-ecosystem: "github-actions"
+  - package-ecosystem: github-actions
     schedule:
       interval: weekly
-    directories:
-      - ".github/workflows/**"
-  - package-ecosystem: "uv"
+    directory: /
+    commit-message:
+      prefix: ":arrow_up: "
+
+  - package-ecosystem: uv
     schedule:
       interval: weekly
-    directories:
-      - "**"
+    directory: /
+    commit-message:
+      prefix: ":arrow_up: "
